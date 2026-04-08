@@ -1,0 +1,331 @@
+/* Custom overrides for Tobias's site — inspired by thilak.de / PaperMod */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap');
+
+body {
+  font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+  font-size: 17px;
+  line-height: 1.75;
+  background-color: #f5f5f5;
+}
+
+.logo a {
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+#menu a {
+  font-size: 15px;
+  font-family: 'Merriweather', Georgia, serif;
+  font-weight: 300;
+}
+
+.home-info .entry-content {
+  font-size: 18px;
+  color: var(--secondary);
+  -webkit-line-clamp: unset;
+}
+
+.post-content {
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 17px;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+  font-family: 'Merriweather', Georgia, serif;
+  font-weight: 900;
+  background-color: #f5f5f5;
+  margin: 2rem 0 1rem;
+}
+
+.post-content h1 {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+.post-content blockquote {
+  margin: 0 0 1.2rem 0;
+  padding: 0 0 0 16px;
+  border-inline-start: 2px solid var(--primary);
+  border-radius: 0;
+  font-style: normal;
+}
+
+.post-content blockquote p {
+  margin-bottom: 0.25rem;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.post-content code {
+  font-family: 'SF Mono', 'Fira Mono', 'Menlo', monospace;
+  font-size: 0.75em;
+  background: var(--code-bg);
+  border-radius: 3px;
+  padding: 2px 6px;
+  color: var(--secondary);
+}
+
+.post-content hr {
+  margin: 2rem 0;
+  height: 1px;
+  background: var(--border);
+  border: 0;
+}
+
+.post-content a {
+  color: var(--primary);
+  box-shadow: 0 1px 0 var(--primary);
+}
+
+.post-content a:hover {
+  color: var(--secondary);
+  box-shadow: 0 1px 0 var(--secondary);
+}
+
+.footer {
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+:root {
+  --main-width: 860px;
+  --nav-width: 1100px;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+@media screen and (max-width: 767px) {
+  body { font-size: 16px; }
+  .post-content h1 { font-size: 1.6rem; }
+}
+
+
+/* ─── Mediablog layout ───────────────────────────────── */
+
+.mediablog-content h1#mediablog-heading {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 0.5rem 0 2rem;
+}
+
+.mb-section {
+  margin-bottom: 2.5rem;
+}
+
+.mb-section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid var(--primary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.mb-section-title {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Merriweather', Georgia, serif;
+}
+
+.mb-section-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.mb-count {
+  font-size: 11px;
+  color: var(--secondary);
+  font-family: 'SF Mono', 'Fira Mono', Menlo, monospace;
+}
+
+.mb-toggle {
+  font-size: 11px;
+  color: var(--secondary);
+  font-family: 'SF Mono', 'Fira Mono', Menlo, monospace;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  letter-spacing: 0.03em;
+  opacity: 0.6;
+}
+
+.mb-toggle:hover {
+  opacity: 1;
+}
+
+.mb-entry {
+  display: flex;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 0.5px solid var(--border);
+  align-items: flex-start;
+}
+
+.mb-entry:last-child {
+  border-bottom: none;
+}
+
+.mb-cover {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  background: var(--code-bg);
+  border: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mb-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mb-cover-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: var(--secondary);
+  opacity: 0.4;
+}
+
+.mb-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.mb-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  line-height: 1.35;
+  display: block;
+  margin-bottom: 3px;
+  box-shadow: none;
+}
+
+.mb-title:hover {
+  text-decoration: underline;
+  box-shadow: none;
+}
+
+.mb-byline {
+  font-size: 11px;
+  color: var(--secondary);
+  font-family: 'SF Mono', 'Fira Mono', Menlo, monospace;
+  margin-bottom: 5px;
+}
+
+.mb-date {
+  opacity: 0.55;
+  margin-right: 8px;
+}
+
+.mb-note {
+  font-size: 13px;
+  color: var(--secondary);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+.mb-link {
+  display: inline-block;
+  font-size: 11px;
+  color: var(--primary);
+  font-family: 'SF Mono', 'Fira Mono', Menlo, monospace;
+  border-bottom: 1px solid var(--primary);
+  text-decoration: none;
+  padding-bottom: 1px;
+  box-shadow: none;
+}
+
+.mb-link:hover {
+  color: var(--secondary);
+  border-color: var(--secondary);
+  box-shadow: none;
+}
+
+.mb-footer {
+  padding-top: 6px;
+}
+
+.mb-showmore {
+  font-size: 11px;
+  color: var(--secondary);
+  font-family: 'SF Mono', 'Fira Mono', Menlo, monospace;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  letter-spacing: 0.03em;
+  opacity: 0.6;
+}
+
+.mb-showmore:hover {
+  opacity: 1;
+}
+
+
+/* ─── Responsive — mediablog ─────────────────────────── */
+
+@media screen and (max-width: 600px) {
+  .mb-entry {
+    gap: 12px;
+  }
+
+  .mb-cover {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+  }
+
+  .mb-cover-placeholder {
+    font-size: 18px;
+  }
+
+  .mb-title {
+    font-size: 14px;
+  }
+
+  .mb-note {
+    font-size: 12px;
+  }
+
+  .mb-section-title {
+    font-size: 16px;
+  }
+
+  .mediablog-content h1#mediablog-heading {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .mb-cover {
+    display: none;
+  }
+
+  .mb-entry {
+    gap: 0;
+  }
+}

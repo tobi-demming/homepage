@@ -1,0 +1,97 @@
+{{- define "main" }}
+<article class="post-single">
+  <div class="post-content mediablog-content">
+    <h1 id="mediablog-heading">mediablog</h1>
+
+    {{- range .Params.sections }}
+    {{- $section := . }}
+    {{- $total := len .entries }}
+    <div class="mb-section" id="section-{{ .id }}">
+
+      <div class="mb-section-header" data-target="{{ .id }}">
+        <span class="mb-section-title">{{ .label }}</span>
+        <div class="mb-section-controls">
+          <span class="mb-count">{{ $total }} {{ if eq $total 1 }}entry{{ else }}entries{{ end }}</span>
+          <button class="mb-toggle" data-id="{{ .id }}" aria-label="toggle section">collapse ↑</button>
+        </div>
+      </div>
+
+      <div class="mb-entries" id="entries-{{ .id }}">
+        {{- range $i, $e := .entries }}
+        <div class="mb-entry{{ if gt $i 0 }} mb-extra{{ end }}"{{ if gt $i 0 }} style="display:none"{{ end }}>
+
+          <div class="mb-cover">
+            {{- if $e.cover }}
+            <img src="{{ $e.cover }}" alt="{{ $e.title }}" loading="lazy">
+            {{- else }}
+            <div class="mb-cover-placeholder" data-type="{{ $section.id }}"></div>
+            {{- end }}
+          </div>
+
+          <div class="mb-body">
+            <a class="mb-title" href="{{ $e.link }}" target="_blank" rel="noopener">{{ $e.title }}</a>
+            <div class="mb-byline">
+              <span class="mb-date">{{ $e.date }}</span>{{ $e.author }}
+            </div>
+            <div class="mb-note">{{ $e.note }}</div>
+            <a class="mb-link" href="{{ $e.link }}" target="_blank" rel="noopener">{{ $e.link_label }} →</a>
+          </div>
+
+        </div>
+        {{- end }}
+      </div>
+
+      {{- if gt $total 1 }}
+      <div class="mb-footer">
+        <button class="mb-showmore" data-id="{{ .id }}" data-hidden="{{ sub $total 1 }}">+ {{ sub $total 1 }} more</button>
+      </div>
+      {{- end }}
+
+    </div>
+    {{- end }}
+  </div>
+</article>
+
+<script>
+(function(){
+  const symbols={articles:"§",podcasts:"▶",books:"▪",substacks:"✉",videos:"▶"};
+
+  document.querySelectorAll('.mb-cover-placeholder').forEach(el=>{
+    el.textContent=symbols[el.dataset.type]||'·';
+  });
+
+  document.querySelectorAll('.mb-showmore').forEach(btn=>{
+    let expanded=false;
+    const hidden=parseInt(btn.dataset.hidden);
+    btn.addEventListener('click',e=>{
+      e.stopPropagation();
+      expanded=!expanded;
+      const entries=document.querySelectorAll(`#entries-${btn.dataset.id} .mb-extra`);
+      entries.forEach(el=>el.style.display=expanded?'flex':'none');
+      btn.textContent=expanded?'↑ less':`+ ${hidden} more`;
+    });
+  });
+
+  document.querySelectorAll('.mb-section-header').forEach(header=>{
+    let collapsed=false;
+    const id=header.dataset.target;
+    const toggle=header.querySelector('.mb-toggle');
+    const footer=header.closest('.mb-section').querySelector('.mb-footer');
+    const showMore=header.closest('.mb-section').querySelector('.mb-showmore');
+
+    header.addEventListener('click',e=>{
+      if(e.target===showMore)return;
+      collapsed=!collapsed;
+      const extras=document.querySelectorAll(`#entries-${id} .mb-extra`);
+      extras.forEach(el=>el.style.display='none');
+      if(showMore){
+        const hidden=parseInt(showMore.dataset.hidden);
+        showMore.textContent=`+ ${hidden} more`;
+      }
+      if(footer)footer.style.display=collapsed?'none':'block';
+      toggle.textContent=collapsed?'expand ↓':'collapse ↑';
+    });
+  });
+})();
+</script>
+{{- end }}
