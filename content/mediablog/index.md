@@ -24,7 +24,7 @@ sections:
         note: "The podcast Cybernation discusses current issues in (german) cybersecurity and defense policy within the cyber and information domain. Using incidents such as attacks on critical infrastructure, it analyzes the strategic, political, and security implications for digital security and how governments respond to these threats."
         link: "https://cybernation.fm/"
         link_label: "listen"
-        cover: "img/mediablog/cybernation-der-podcast-fuer-digitale-sicherheit.jpeg"
+        cover: "/homepage/img/mediablog/cybernation-der-podcast-fuer-digitale-sicherheit.jpeg"
 
 
   - id: books
@@ -36,5 +36,5 @@ sections:
         note: "The best philosophical assessment of Ai and especcially LLMs that I have come across. Simanowski highlights the risk that dominant patterns of past language become the default horizon of thought. Humans risk losing the active process of forming and evaluating ideas themselves, turning from authors into readers of synthesized consensus"
         link: "https://www.chbeck.de/simanowski-sprachmaschinen/product/38830592"
         link_label: "view book"
-        cover: "img/mediablog/simanowski.jpeg"
+        cover: "/homepage/img/mediablog/simanowski.jpeg"
 ---
