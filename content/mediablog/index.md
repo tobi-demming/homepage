@@ -12,7 +12,7 @@ sections:
         note: "A New Yorker investigation into whether OpenAI CEO Sam Altman can be trusted, based on leaked internal memos and over 100 interviews alleging a pattern of deception and eroding safety commitments. Timely as OpenAI pursues a trillion-dollar IPO and expands into military contracts and Gulf-state infrastructure deals."
         link: "https://www.newyorker.com/magazine/2026/04/13/sam-altman-may-control-our-future-can-he-be-trusted"
         link_label: "read article"
-        cover: ""
+        cover: "/homepage/img/mediablog/newyorker.png"
 
 
   - id: podcasts
