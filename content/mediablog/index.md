@@ -37,3 +37,4 @@ sections:
         link: "https://www.chbeck.de/simanowski-sprachmaschinen/product/38830592"
         link_label: "view book"
         cover: "/img/mediablog/simanowski.jpeg"
+---
