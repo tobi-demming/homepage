@@ -1,4 +1,4 @@
-baseURL = "https://tobias.dev/"
+baseURL = "https://tobi-demming.github.io/homepage/"
 languageCode = "en-us"
 title = "Tobias"
 theme = "PaperMod"
@@ -40,15 +40,15 @@ buildFuture = false
 
   [[params.socialIcons]]
     name = "github"
-    url = "https://github.com/"
+    url = "https://github.com/tobi-demming/"
 
   [[params.socialIcons]]
     name = "linkedin"
-    url = "https://linkedin.com/in/"
+    url = "https://www.linkedin.com/in/tobias-demming"
 
   [[params.socialIcons]]
     name = "email"
-    url = "mailto:hello@tobias.dev"
+    url = "mailto:hello@tobias"
 
 [menu]
   [[menu.main]]
