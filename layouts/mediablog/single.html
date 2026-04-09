@@ -18,7 +18,7 @@
 
       <div class="mb-entries" id="entries-{{ .id }}">
         {{- range $i, $e := .entries }}
-        <div class="mb-entry{{ if gt $i 0 }} mb-extra{{ end }}"{{ if gt $i 0 }} style="display:none"{{ end }}>
+        <div class="mb-entry{{ if gt $i 0 }} mb-extra{{ end }}" data-index="{{ $i }}">
 
           <div class="mb-cover">
             {{- if $e.cover }}
@@ -42,7 +42,7 @@
       </div>
 
       {{- if gt $total 1 }}
-      <div class="mb-footer">
+      <div class="mb-footer" id="footer-{{ .id }}">
         <button class="mb-showmore" data-id="{{ .id }}" data-hidden="{{ sub $total 1 }}">+ {{ sub $total 1 }} more</button>
       </div>
       {{- end }}
@@ -53,45 +53,61 @@
 </article>
 
 <script>
-(function(){
-  const symbols={articles:"§",podcasts:"▶",books:"▪",substacks:"✉",videos:"▶"};
+document.addEventListener('DOMContentLoaded', function() {
 
-  document.querySelectorAll('.mb-cover-placeholder').forEach(el=>{
-    el.textContent=symbols[el.dataset.type]||'·';
+  var symbols = {articles:'§', podcasts:'▶', books:'▪', substacks:'✉', videos:'▶'};
+  document.querySelectorAll('.mb-cover-placeholder').forEach(function(el) {
+    el.textContent = symbols[el.dataset.type] || '·';
   });
 
-  document.querySelectorAll('.mb-showmore').forEach(btn=>{
-    let expanded=false;
-    const hidden=parseInt(btn.dataset.hidden);
-    btn.addEventListener('click',e=>{
+  document.querySelectorAll('.mb-entry').forEach(function(el) {
+    if (parseInt(el.dataset.index) > 0) {
+      el.style.display = 'none';
+    }
+  });
+
+  document.querySelectorAll('.mb-showmore').forEach(function(btn) {
+    var expanded = false;
+    var id = btn.dataset.id;
+    var hidden = parseInt(btn.dataset.hidden);
+
+    btn.addEventListener('click', function(e) {
       e.stopPropagation();
-      expanded=!expanded;
-      const entries=document.querySelectorAll(`#entries-${btn.dataset.id} .mb-extra`);
-      entries.forEach(el=>el.style.display=expanded?'flex':'none');
-      btn.textContent=expanded?'↑ less':`+ ${hidden} more`;
+      expanded = !expanded;
+      document.querySelectorAll('#entries-' + id + ' .mb-extra').forEach(function(el) {
+        el.style.display = expanded ? 'flex' : 'none';
+      });
+      btn.textContent = expanded ? '↑ less' : '+ ' + hidden + ' more';
     });
   });
 
-  document.querySelectorAll('.mb-section-header').forEach(header=>{
-    let collapsed=false;
-    const id=header.dataset.target;
-    const toggle=header.querySelector('.mb-toggle');
-    const footer=header.closest('.mb-section').querySelector('.mb-footer');
-    const showMore=header.closest('.mb-section').querySelector('.mb-showmore');
+  document.querySelectorAll('.mb-section-header').forEach(function(header) {
+    var collapsed = false;
+    var id = header.dataset.target;
+    var toggle = header.querySelector('.mb-toggle');
+    var footer = document.getElementById('footer-' + id);
 
-    header.addEventListener('click',e=>{
-      if(e.target===showMore)return;
-      collapsed=!collapsed;
-      const extras=document.querySelectorAll(`#entries-${id} .mb-extra`);
-      extras.forEach(el=>el.style.display='none');
-      if(showMore){
-        const hidden=parseInt(showMore.dataset.hidden);
-        showMore.textContent=`+ ${hidden} more`;
+    header.addEventListener('click', function(e) {
+      if (e.target.classList.contains('mb-showmore')) return;
+      collapsed = !collapsed;
+
+      document.querySelectorAll('#entries-' + id + ' .mb-extra').forEach(function(el) {
+        el.style.display = 'none';
+      });
+
+      if (footer) {
+        footer.style.display = collapsed ? 'none' : 'block';
+        var showMore = footer.querySelector('.mb-showmore');
+        if (showMore) {
+          var hidden = parseInt(showMore.dataset.hidden);
+          showMore.textContent = '+ ' + hidden + ' more';
+        }
       }
-      if(footer)footer.style.display=collapsed?'none':'block';
-      toggle.textContent=collapsed?'expand ↓':'collapse ↑';
+
+      toggle.textContent = collapsed ? 'expand ↓' : 'collapse ↑';
     });
   });
-})();
+
+});
 </script>
 {{- end }}

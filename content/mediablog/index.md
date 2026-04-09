@@ -34,6 +34,14 @@ sections:
         link_label: "listen"
         cover: "/homepage/img/mediablog/acq.jpg"
 
+      - title: "The Modi Raj by The Economist"
+        author: "Avantika Chilkoti"
+        date: "06/24"
+        note: "If you want to grasp how India arrived at this political moment, the world's fastest-growing major economy led by a chai seller's son turned Hindu-nationalist strongman, this is a good place to start. Avantika Chilkoti talks to a lot of different persons for well researched persepctives on Modi and doesn't shy away from the central tension of his rule: rapid economic modernization alongside assertive Hindu nationalism. Thorough, well-reported, and accessible even without prior knowledge of Indian politics."
+        link: "https://www.economist.com/audio/podcasts/the-modi-raj"
+        link_label: "listen"
+        cover: "/homepage/img/mediablog/modi.jpg"
+
 
   - id: books
     label: books
@@ -45,4 +53,12 @@ sections:
         link: "https://www.chbeck.de/simanowski-sprachmaschinen/product/38830592"
         link_label: "view book"
         cover: "/homepage/img/mediablog/simanowski.jpeg"
+
+      - title: "Energy and Civilization: A History"
+        author: "Vaclav Smil"
+        date: "05/17"
+        note: "Vaclav Smil manages to describe how energy inputs and outputs, from draft animals to fossil fuels, fundamentally shaped civilizations and economies in the past. It's quite a dense and demanding read but offers a unique comprehensive insight into the role of energy as the fundamental driver of human civilization."
+        link: "https://mitpress.mit.edu/9780262536165/energy-and-civilization/"
+        link_label: "view book"
+        cover: "/homepage/img/mediablog/energy.jpg"
 ---
