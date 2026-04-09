@@ -32,7 +32,7 @@ sections:
         note: "Acquired is my go-to podcast for understanding how the biggest (tech) companies actually got built — each episode is a massive deep dive that feels like a really good conversation. Ben and David work together charmingly. If you're into business, strategy, or just great storytelling, you'll get hooked fast."
         link: "https://www.acquired.fm/"
         link_label: "listen"
-        cover: "/homepage/img/mediablog/acq.jpeg"
+        cover: "/homepage/img/mediablog/acq.jpg"
 
 
   - id: books
