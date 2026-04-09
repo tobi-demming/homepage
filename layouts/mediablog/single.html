@@ -41,12 +41,6 @@
         {{- end }}
       </div>
 
-      {{- if gt $total 1 }}
-      <div class="mb-footer" id="footer-{{ .id }}">
-        <button class="mb-showmore" data-id="{{ .id }}" data-hidden="{{ sub $total 1 }}">+ {{ sub $total 1 }} more</button>
-      </div>
-      {{- end }}
-
     </div>
     {{- end }}
   </div>
