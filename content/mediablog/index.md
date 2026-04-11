@@ -18,6 +18,14 @@ sections:
   - id: podcasts
     label: podcasts
     entries:
+      - title: "The Daily - Unmasking the Creator of Bitcoin (NYT Podcast)"
+        author: "John Carreyrou (as guest)"
+        date: "04/26"
+        note: "The NYT investigation into Satoshi Nakamoto is an interesting piece of journalism in the way they combined data science and AI to sift through thousands of posts, filtering writers by hyphenation habits, grammar quirks, and spelling patterns until only one name is left. Still, part of me wonders whether we should let Satoshi stay in the shadows. Some creators are inseparable from their anonymity (looking at you Banksy). Maybe Satoshi earned the same right."
+        link: "https://www.nytimes.com/2026/04/09/podcasts/the-daily/satoshi-nakamoto-bitcoin-creator.html"
+        link_label: "listen"
+        cover: "/homepage/img/mediablog/thedaily.jpeg"
+  
       - title: "Cybernation - A 'Lage der Nation' Podcast (DE)"
         author: "Sven Herpig, Alexandra Paulus, Johannes Steger"
         date: "monthly since 01/26"
