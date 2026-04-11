@@ -287,6 +287,12 @@ body {
   opacity: 1;
 }
 
+.mb-description {
+  font-size: 13px;
+  color: #5a5a5a;
+  font-style: italic;
+  margin: 10px 0 4px;
+}
 
 /* ─── Responsive — mediablog ─────────────────────────── */
 

@@ -17,6 +17,8 @@ sections:
 
   - id: podcasts
     label: podcasts
+    description: "Episodes are linked to the original publisher page — find them in the podcast player of your choice by searching the title."
+
     entries:
       - title: "The Daily - Unmasking the Creator of Bitcoin (NYT Podcast)"
         author: "John Carreyrou (as guest)"

@@ -16,6 +16,10 @@
         </div>
       </div>
 
+      {{- if .description }}
+      <p class="mb-description">{{ .description }}</p>
+      {{- end }}
+
       <div class="mb-entries" id="entries-{{ .id }}">
         {{- range $i, $e := .entries }}
         <div class="mb-entry{{ if gt $i 0 }} mb-extra{{ end }}" data-index="{{ $i }}">
