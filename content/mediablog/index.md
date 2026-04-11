@@ -48,7 +48,7 @@ sections:
     entries:
       - title: "Sprachmaschinen Eine Philosophie der künstlichen Intelligenz (DE)"
         author: "Roberto Simanowski"
-        date: "11/24"
+        date: "10/25"
         note: "The best philosophical assessment of Ai and especcially LLMs that I have come across. Simanowski highlights the risk that dominant patterns of past language become the default horizon of thought. Humans risk losing the active process of forming and evaluating ideas themselves, turning from authors into readers of synthesized consensus"
         link: "https://www.chbeck.de/simanowski-sprachmaschinen/product/38830592"
         link_label: "view book"
